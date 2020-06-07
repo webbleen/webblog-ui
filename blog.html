@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客详情</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="css/me.css">
+</head>
+<body>
+
+<!--导航-->
+<nav class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">Webblog</h2>
+            <a href="#" class="active m-item item m-mobile-hide"><i class="small home icon"></i>首页</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="small idea icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="small tags icon"></i>标签</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="small clone icon"></i>归档</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="small info icon"></i>关于我</a>
+            <!--搜索框-->
+            <div class="right m-item item m-mobile-hide">
+                <div class="ui icon inverted transparent input">
+                    <input type="text" placeholder="Search....">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+<!--中间内容-->
+<div class="m-container-small m-padded-tb-big">
+    <div class="ui container">
+        <div class="ui top attached segment">
+            <!--博文头部-->
+            <div class="ui horizontal link list">
+                <div class="item">
+                    <img src="https://picsum.photos/id/1003/100/100" alt="" class="ui avatar image">
+                    <div class="content"><a href="#" class="header m-text-thin">李文斌</a></div>
+                </div>
+                <div class="item">
+                    <i class="calendar icon"></i>2020-06-08
+                </div>
+                <div class="item">
+                    <i class="eye icon"></i>1322
+                </div>
+            </div>
+        </div>
+        <div class="ui attached segment">
+            <!--图片区域-->
+            <img src="https://picsum.photos/id/1003/800/450" alt="" class="ui fluid rounded image">
+        </div>
+        <div class="ui attached padded segment">
+            <!--主要内容-->
+            <div class="ui right aligned basic segment">
+                <div class="ui orange basic label">原创</div>
+            </div>
+            <!--标题-->
+            <h2 class="ui center aligned header">集成：Using Semantic UI with Other Libraries</h2>
+            <br>
+            <!--正文-->
+            <div id="content" class="m-padded-lr-responsive m-padded-tb-large">
+                <h2 class="ui dividing header">
+                    React
+                </h2>
+
+                <div class="example">
+                    <h4>Contribute to React Development</h4>
+                    <p>Semantic UI React bindings are still in development, but are available for most components.</p>
+                    <a href="https://github.com/Semantic-Org/Semantic-UI-React" target="_blank" class="ui button"><i
+                            class="github icon"></i>Visit React Repo</a>
+                </div>
+
+                <h2 class="ui dividing header">
+                    Meteor
+                </h2>
+
+                <div class="no example">
+                    <h4 class="ui header">Install via Atmosphere</h4>
+                    <p>Install the <a href="https://atmospherejs.com/semantic/ui">Semantic UI package</a> from
+                        atmosphere.</p>
+                    <div class="code" data-type="bash">
+                        meteor add semantic:ui
+                    </div>
+                    <p>The next step will differ depending on what version of Meteor you are running. Continue to the
+                        section relevant to your version of Meteor.</p>
+                    <h4 class="ui header">(Meteor &lt;1.3) Install less-autoprefixer package</h4>
+                    <p>You will need a special package less-autoprefixer, to add vendor prefixes to your LESS
+                        pipeline.</p>
+                    <div class="ui ignored info message">
+                        Since <code>flemay:less-autoprefixer</code> compiles LESS files you don't need any other less
+                        package.
+                    </div>
+                    <div class="code" data-type="bash">
+                        meteor add flemay:less-autoprefixer
+                    </div>
+                    <p>Continue to the "Create a custom.semantic.json file" section</p>
+                    <h4 class="ui header">(Meteor 1.3+) Install less and postcss packages</h4>
+                    <p>Remove the standard-minifier-css package.</p>
+                    <div class="code" data-type="bash">
+                        meteor remove standard-minifier-css
+                    </div>
+                    <p>Install the less and postcss packages.</p>
+                    <div class="code" data-type="bash">
+                        meteor add less juliancwirko:postcss
+                    </div>
+                    <p>To configure the postcss package, add the following to your <code>package.json</code> file and
+                        save it.</p>
+                    <div class="code" data-type="json">
+                        {
+                        "devDependencies": {
+                        "autoprefixer": "^6.3.1"
+                        },
+                        "postcss": {
+                        "plugins": {
+                        "autoprefixer": {"browsers": ["last 2 versions"]}
+                        }
+                        }
+                        }
+                    </div>
+                    <p>To finish setting up the postcss package, install the new autoprefixer NPM package.</p>
+                    <div class="code" data-type="bash">
+                        meteor npm install
+                    </div>
+                </div>
+                <div class="no example">
+                    <h4 class="ui header">Create a custom.semantic.json file</h4>
+                    <p>With meteor stopped:</p>
+                    <div class="code" data-type="bash">
+                        touch client/lib/semantic-ui/custom.semantic.json
+                    </div>
+                    <p><code>custom.semantic.json</code> is a special file used to determine which themes and components
+                        to include in your project's build.</p>
+                    <p>To remove a component from the pipeline, simply set the boolean value to <code>false</code></p>
+                    <div class="code" data-type="json">
+                        {
+                        "definitions": {
+                        "accordion" : true,
+                        "ad" : true,
+                        "api" : true,
+                        /* etc */
+                        },
+                        "themes": {
+                        "amazon" : false,
+                        "basic" : false,
+                        "bookish" : false,
+                        "bootstrap3" : false,
+                        "chubby" : false,
+                        "classic" : false,
+                        "default" : true,
+                        /* etc */
+                        }
+                    </div>
+                </div>
+                <div class="no example">
+                    <h4>Start Meteor / Generate</h4>
+
+                    <p>Every time Meteor starts or refreshes it calls the package semantic:ui to generate Semantic
+                        UI.</p>
+
+                    <p>The package has a uses the diff between <code>custom.semantic.json</code> and <code>.custom.semantic.json</code>
+                        to avoid regenerating files unnecessarily.</p>
+
+                    <p>If the file <code>.custom.semantic.json</code> does not exist or it is different than
+                        custom.semantic.json then it will generate Semantic UI.</p>
+                </div>
+                <div class="no example">
+                    <h4>Customize Site Variables</h4>
+                    <p>Semantic UI meteor includes a site theme, <code>site/</code> which can be used to customize less
+                        variables for your site. These files are optional, and can safely be removed if customization is
+                        not necessary.</p>
+                    <p>Visit our <a href="/usage/theming.html">theming guide</a> to learn more about theming.</p>
+                </div>
+                <div class="no example">
+                    <h4>Issues & Debugging</h4>
+                    <p>For help with Semantic UI Meteor, and for the latest updates, please visit the repository home on
+                        GitHub</p>
+                    <a href="https://github.com/Semantic-Org/Semantic-UI-Meteor" target="_blank" class="ui button"><i
+                            class="github icon"></i> Visit Meteor Repo</a>
+                </div>
+
+                <h2 class="ui header">
+                    Ember
+                </h2>
+
+
+                <div class="example">
+                    <h4 class="ui header">Installing via CLI</h4>
+                    <p>Include the library as an NPM dependency, from within an ember-cli app.</p>
+
+                    <p>If you are using Ember CLI <code>1.13-2.X</code>
+                    <div class="code">
+                        ember install semantic-ui-ember
+                    </div>
+                    <p>If you are using an older version <code>< 0.1.5</code>
+                    <div class="code">
+                        npm install --save-dev Semantic-Org/Semantic-UI-Ember
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h4 class="ui header">Run the Library's Blueprint</h4>
+                    <div class="code">
+                        ember generate semantic-ui-ember
+                    </div>
+                </div>
+                <div class="example">
+                    <h4 class="ui header">Get Coding</h4>
+                    <p>For example of individual components check out the GitHub repository</p>
+                    <a href="https://github.com/Semantic-Org/Semantic-UI-Ember" target="_blank" class="ui button"><i
+                            class="github icon"></i> Visit Ember Repo</a>
+                </div>
+
+                <h2 class="ui dividing header">
+                    Angular
+                </h2>
+
+                <div class="example">
+                    <h4>Contribute to Angular Development</h4>
+                    <p>Semantic UI angular bindings are still in development, but are available for some components</p>
+                    <a href="https://github.com/Semantic-Org/Semantic-UI-Angular" target="_blank" class="ui button"><i
+                            class="github icon"></i>Visit Angular Repo</a>
+                </div>
+            </div>
+            <!--标签-->
+            <div class="m-padded-lr-responsive">
+                <div class="ui basic teal left pointing label">方法论</div>
+            </div>
+            <!--赞赏-->
+            <div class="ui center aligned basic segment">
+                <button id="payButton" class="ui orange basic circular button">赞赏</button>
+            </div>
+            <div class="ui payQR flowing popup transition hidden">
+                <div class="ui orange basic label">
+                    <div class="ui images" style="font-size: inherit !important;">
+                        <div class="image">
+                            <img src="./images/wechat.png" alt="" class="ui rounded bordered image"
+                                 style="width: 120px">
+                            <div>支付宝</div>
+                        </div>
+                        <div class="image">
+                            <img src="./images/wechat.png" alt="" class="ui rounded bordered image"
+                                 style="width: 120px">
+                            <div>微信</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui attached positive message">
+            <!--博客信息-->
+            <div class="ui middle aligned grid">
+                <div class="eleven wide column">
+                    <ui class="list">
+                        <li>作者：ZengZK</li>
+                        <li>更新时间：2020-06-02 09:06:27</li>
+                        <li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</li>
+                        <li>公众号转载：请在文末添加坐着坐着公众号二维码</li>
+                    </ui>
+                </div>
+                <div class="five wide column">
+                    <img src="./images/wechat.png" alt="" class="ui right floated rounded bordered image"
+                         style="width: 110px">
+                </div>
+            </div>
+        </div>
+        <div class="ui bottom attached segment">
+            <!--留言区域列表-->
+            <div class="ui teal segment">
+                <div class="ui comments">
+                    <h3 class="ui dividing header">Comments</h3>
+                    <div class="comment">
+                        <a class="avatar">
+                            <img src="https://picsum.photos/id/1003/100/100">
+                        </a>
+                        <div class="content">
+                            <a class="author">Matt</a>
+                            <div class="metadata">
+                                <span class="date">今天 5:42PM</span>
+                            </div>
+                            <div class="text">
+                                How artistic!
+                            </div>
+                            <div class="actions">
+                                <a class="reply">回复</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <a class="avatar">
+                            <img src="https://picsum.photos/id/1003/100/100">
+                        </a>
+                        <div class="content">
+                            <a class="author">Elliot Fu</a>
+                            <div class="metadata">
+                                <span class="date">昨天 12:30PM</span>
+                            </div>
+                            <div class="text">
+                                <p>This has been very useful for my research. Thanks as well!</p>
+                            </div>
+                            <div class="actions">
+                                <a class="reply">回复</a>
+                            </div>
+                        </div>
+                        <div class="comments">
+                            <div class="comment">
+                                <a class="avatar">
+                                    <img src="https://picsum.photos/id/1003/100/100">
+                                </a>
+                                <div class="content">
+                                    <a class="author">Jenny Hess</a>
+                                    <div class="metadata">
+                                        <span class="date">刚刚</span>
+                                    </div>
+                                    <div class="text">
+                                        Elliot you are always so right :)
+                                    </div>
+                                    <div class="actions">
+                                        <a class="reply">回复</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <a class="avatar">
+                            <img src="https://picsum.photos/id/1003/100/100">
+                        </a>
+                        <div class="content">
+                            <a class="author">Joe Henderson</a>
+                            <div class="metadata">
+                                <span class="date">5天前</span>
+                            </div>
+                            <div class="text">
+                                Dude, this is awesome. Thanks so much
+                            </div>
+                            <div class="actions">
+                                <a class="reply">回复</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--提交留言-->
+            <div class="ui form">
+                <div class="field">
+                    <textarea name="content" placeholder="请输入评论信息..."></textarea>
+                </div>
+                <div class="fields">
+                    <div class="field m-mobile-wide m-margin-bottom-small">
+                        <div class="ui left icon input">
+                            <i class="user icon"></i>
+                            <input type="text" name="nickname" placeholder="姓名">
+                        </div>
+                    </div>
+                    <div class="field m-mobile-wide m-margin-bottom-small">
+                        <div class="ui left icon input">
+                            <i class="mail icon"></i>
+                            <input type="text" name="email" placeholder="邮箱">
+                        </div>
+                    </div>
+                    <div class="field m-mobile-wide m-margin-bottom-small">
+                        <div class="ui teal button m-mobile-wide"><i class="edit icon"></i>发布</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<!--底部footer-->
+<footer class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <img src="./images/wechat.png" class="ui rounded image" style="width: 110px" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">用户故事（User Story）</a>
+                    <a href="#" class="item">用户故事（User Story）</a>
+                    <a href="#" class="item">用户故事（User Story）</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">联系我</h4>
+                <div class="ui inverted link list">
+                    <a href="mailto:webbleen@gmail.com" class="item">Email: webbleen@gmail.com</a>
+                    <a href="#" class="item">QQ: 251816049</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">Blog</h4>
+                <div class="ui inverted link list">
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">
+                        这是我的个人博客，会分享关于编程、写作、思考相关的任何内容。希望可以给来到这儿的人有所帮助...</p>
+                </div>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2020 webblog Designed by webbleen</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass("m-mobile-hide");
+    });
+
+    $('#payButton').popup({
+        popup: $('.payQR.popup'),
+        on: 'click',
+        position: 'bottom center'
+    });
+</script>
+
+</body>
+</html>
