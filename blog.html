@@ -18,7 +18,7 @@
     <div class="ui container">
         <div class="ui inverted secondary stackable menu">
             <h2 class="ui teal header item">Webblog</h2>
-            <a href="#" class="active m-item item m-mobile-hide"><i class="small home icon"></i>首页</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="small home icon"></i>首页</a>
             <a href="#" class="m-item item m-mobile-hide"><i class="small idea icon"></i>分类</a>
             <a href="#" class="m-item item m-mobile-hide"><i class="small tags icon"></i>标签</a>
             <a href="#" class="m-item item m-mobile-hide"><i class="small clone icon"></i>归档</a>
@@ -38,7 +38,7 @@
 </nav>
 
 <!--中间内容-->
-<div class="m-container-small m-padded-tb-big animated fadeIn">
+<div id="waypoint" class="m-container-small m-padded-tb-big animated fadeIn">
     <div class="ui container">
         <div class="ui top attached segment">
             <!--博文头部-->
@@ -602,7 +602,7 @@ h5,h6{font-size:1em;}
     </div>
 </div>
 
-<div class="m-padded m-fixed m-right-bottom">
+<div id="toolbar" class="m-padded m-fixed m-right-bottom" style="display: none">
     <div class="ui vertical icon buttons">
         <button class="ui toc teal button">目录</button>
         <a href="#comment-container" class="ui teal button">留言</a>
@@ -670,6 +670,7 @@ h5,h6{font-size:1em;}
 <script src="lib/prism/prism.js"></script>
 <script src="lib/tocbot/tocbot.min.js"></script>
 <script src="lib/qrcode/qrcode.min.js"></script>
+<script src="lib/waypoints/jquery.waypoints.min.js"></script>
 
 <script>
     $('.menu.toggle').click(function () {
@@ -717,6 +718,18 @@ h5,h6{font-size:1em;}
     $('#toTop').click(function () {
         $(window).scrollTo(0, 500);
     });
+
+    var waypoint = new Waypoint({
+        element: document.getElementById('waypoint'),
+        handler: function(direction) {
+            if (direction == 'down') {
+                $('#toolbar').show(100);
+            } else {
+                $('#toolbar').hide(500);
+            }
+            console.log('Scrolled to waypoint! direction:' + direction)
+        }
+    })
 </script>
 
 </body>
