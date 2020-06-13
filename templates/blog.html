@@ -25,10 +25,12 @@
             <a href="#" class="m-item item m-mobile-hide"><i class="small info icon"></i>关于我</a>
             <!--搜索框-->
             <div class="right m-item item m-mobile-hide">
-                <div class="ui icon inverted transparent input">
-                    <input type="text" placeholder="Search....">
-                    <i class="search link icon"></i>
-                </div>
+                <form name="search" method="post" action="#" th:action="@{/search}" target="_blank">
+                    <div class="ui icon inverted input">
+                        <input name="query" type="text" placeholder="Search...." th:value="${query}">
+                        <i onclick="document.forms['search'].submit()" class="search link icon"></i>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

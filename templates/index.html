@@ -21,10 +21,12 @@
             <a href="#" class="m-item item m-mobile-hide"><i class="small info icon"></i>关于我</a>
             <!--搜索框-->
             <div class="right m-item item m-mobile-hide">
-                <div class="ui icon inverted transparent input">
-                    <input type="text" placeholder="Search....">
-                    <i class="search link icon"></i>
-                </div>
+                <form name="search" method="post" action="#" th:action="@{/search}" target="_blank">
+                    <div class="ui icon inverted input">
+                        <input name="query" type="text" placeholder="Search...." th:value="${query}">
+                        <i onclick="document.forms['search'].submit()" class="search link icon"></i>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -56,9 +58,9 @@
                         <div class="ui middle aligned mobile reversed stackable grid">
                             <div class="eleven wide column">
                                 <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
-                                <p class="m-text" th:text="|${blog.description}......|">
+                                <p class="m-text m-margin-top-max" th:text="|${blog.description}......|">
                                     在你决定踏上财富自由的路之前，你要先想清楚，这件事真正的意义是什么；如果你真的“想要”财富自由，那么你就需要理解“财富自由”，直到你把这个概念理解得像吃饭睡觉一样透彻之后，你才有了可以加速向它靠近的前提。</p>
-                                <div class="ui grid">
+                                <div class="ui m-margin-top-max grid">
                                     <div class="eleven wide column">
                                         <div class="ui mini horizontal link list">
                                             <div class="item">
