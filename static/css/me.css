@@ -12,6 +12,10 @@ body {
     padding: 0.3em !important;
 }
 
+.m-padded-small {
+    padding: 0.5em !important;
+}
+
 .m-padded {
     padding: 1em !important;
 }
@@ -157,7 +161,11 @@ body {
 
 /*---------color---------*/
 .m-black {
-    color: #333;
+    color: #333 !important;
+}
+
+.m-teal {
+    color: #00B5AD !important;
 }
 
 .m-mobile-show {
