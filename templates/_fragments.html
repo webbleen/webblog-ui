@@ -53,10 +53,14 @@
             </div>
             <div class="three wide column">
                 <h4 class="ui inverted header m-text-thin m-text-spaced">最新博客</h4>
-                <div class="ui inverted link list">
-                    <a href="#" class="item">用户故事（User Story）</a>
-                    <a href="#" class="item">用户故事（User Story）</a>
-                    <a href="#" class="item">用户故事（User Story）</a>
+                <div id="newblogs-container">
+                    <div class="ui inverted link list" th:fragment="newBlogList">
+                        <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" class="item" th:text="${blog.title}" th:each="blog : ${newblogs}">用户故事（User Story）</a>
+                        <!--/*-->
+                        <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" class="item" th:text="${blog.title}" th:each="blog : ${newBlogs}">用户故事（User Story）</a>
+                        <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" class="item" th:text="${blog.title}" th:each="blog : ${newBlogs}">用户故事（User Story）</a>
+                        <!--*/-->
+                    </div>
                 </div>
             </div>
             <div class="three wide column">
@@ -87,6 +91,9 @@
     <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
     <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
     <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
+    <script>
+        $('#newblogs-container').load(/*[[@{/footer/newblogs}]]*/"/footer/newblogs");
+    </script>
 </th:block>
 
 </body>
