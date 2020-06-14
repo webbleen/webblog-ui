@@ -17,7 +17,7 @@
             <a href="#" th:href="@{/}" class="m-item item m-mobile-hide"><i class="small home icon"></i>首页</a>
             <a href="#" th:href="@{/types/-1}" class="m-item item m-mobile-hide"><i class="small idea icon"></i>分类</a>
             <a href="#" th:href="@{/tags/-1}" class="m-item item m-mobile-hide"><i class="small tags icon"></i>标签</a>
-            <a href="#" th:href="@{/archives/-1}" class="m-item item m-mobile-hide"><i class="small clone icon"></i>归档</a>
+            <a href="#" th:href="@{/archives}" class="m-item item m-mobile-hide"><i class="small clone icon"></i>归档</a>
             <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide"><i class="small info icon"></i>关于我</a>
             <!--搜索框-->
             <div class="right m-item item m-mobile-hide">
@@ -57,7 +57,7 @@
                     <div class="ui padded vertical segment m-padded-tb-large" th:each="blog : ${page.content}">
                         <div class="ui middle aligned mobile reversed stackable grid">
                             <div class="eleven wide column">
-                                <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
+                                <h3 class="ui header"><a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
                                 <p class="m-text m-margin-top-max" th:text="|${blog.description}......|">
                                     在你决定踏上财富自由的路之前，你要先想清楚，这件事真正的意义是什么；如果你真的“想要”财富自由，那么你就需要理解“财富自由”，直到你把这个概念理解得像吃饭睡觉一样透彻之后，你才有了可以加速向它靠近的前提。</p>
                                 <div class="ui m-margin-top-max grid">
@@ -84,7 +84,7 @@
                                 </div>
                             </div>
                             <div class="five wide column">
-                                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                                <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank">
                                     <img src="https://picsum.photos/id/1003/800/450" th:src="${blog.firstPicture}" alt=""
                                          class="ui rounded image">
                                 </a>
@@ -95,7 +95,7 @@
                     <div class="ui padded vertical segment m-padded-tb-large">
                         <div class="ui middle aligned mobile reversed stackable grid" th:each="blog : ${page.content}">
                             <div class="eleven wide column">
-                                <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
+                                <h3 class="ui header"><a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
                                 <p class="m-text" th:text="|${blog.description}|......">
                                     在你决定踏上财富自由的路之前，你要先想清楚，这件事真正的意义是什么；如果你真的“想要”财富自由，那么你就需要理解“财富自由”，直到你把这个概念理解得像吃饭睡觉一样透彻之后，你才有了可以加速向它靠近的前提。</p>
                                 <div class="ui grid">
@@ -122,7 +122,7 @@
                                 </div>
                             </div>
                             <div class="five wide column">
-                                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                                <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank">
                                     <img src="https://picsum.photos/id/1003/800/450" th:src="${blog.firstPicture}" alt=""
                                          class="ui rounded image">
                                 </a>
@@ -132,7 +132,7 @@
                     <div class="ui padded vertical segment m-padded-tb-large">
                         <div class="ui middle aligned mobile reversed stackable grid" th:each="blog : ${page.content}">
                             <div class="eleven wide column">
-                                <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
+                                <h3 class="ui header"><a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
                                 <p class="m-text" th:text="|${blog.description}|......">
                                     在你决定踏上财富自由的路之前，你要先想清楚，这件事真正的意义是什么；如果你真的“想要”财富自由，那么你就需要理解“财富自由”，直到你把这个概念理解得像吃饭睡觉一样透彻之后，你才有了可以加速向它靠近的前提。</p>
                                 <div class="ui grid">
@@ -159,7 +159,7 @@
                                 </div>
                             </div>
                             <div class="five wide column">
-                                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                                <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank">
                                     <img src="https://picsum.photos/id/1003/800/450" th:src="${blog.firstPicture}" alt=""
                                          class="ui rounded image">
                                 </a>
@@ -169,7 +169,7 @@
                     <div class="ui padded vertical segment m-padded-tb-large">
                         <div class="ui middle aligned mobile reversed stackable grid" th:each="blog : ${page.content}">
                             <div class="eleven wide column">
-                                <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
+                                <h3 class="ui header"><a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
                                 <p class="m-text" th:text="|${blog.description}|......">
                                     在你决定踏上财富自由的路之前，你要先想清楚，这件事真正的意义是什么；如果你真的“想要”财富自由，那么你就需要理解“财富自由”，直到你把这个概念理解得像吃饭睡觉一样透彻之后，你才有了可以加速向它靠近的前提。</p>
                                 <div class="ui grid">
@@ -196,7 +196,7 @@
                                 </div>
                             </div>
                             <div class="five wide column">
-                                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                                <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank">
                                     <img src="https://picsum.photos/id/1003/800/450" th:src="${blog.firstPicture}" alt=""
                                          class="ui rounded image">
                                 </a>
@@ -206,7 +206,7 @@
                     <div class="ui padded vertical segment m-padded-tb-large">
                         <div class="ui middle aligned mobile reversed stackable grid" th:each="blog : ${page.content}">
                             <div class="eleven wide column">
-                                <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
+                                <h3 class="ui header"><a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
                                 <p class="m-text" th:text="|${blog.description}|......">
                                     在你决定踏上财富自由的路之前，你要先想清楚，这件事真正的意义是什么；如果你真的“想要”财富自由，那么你就需要理解“财富自由”，直到你把这个概念理解得像吃饭睡觉一样透彻之后，你才有了可以加速向它靠近的前提。</p>
                                 <div class="ui grid">
@@ -233,7 +233,7 @@
                                 </div>
                             </div>
                             <div class="five wide column">
-                                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                                <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank">
                                     <img src="https://picsum.photos/id/1003/800/450" th:src="${blog.firstPicture}" alt=""
                                          class="ui rounded image">
                                 </a>
@@ -243,7 +243,7 @@
                     <div class="ui padded vertical segment m-padded-tb-large">
                         <div class="ui middle aligned mobile reversed stackable grid" th:each="blog : ${page.content}">
                             <div class="eleven wide column">
-                                <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
+                                <h3 class="ui header"><a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
                                 <p class="m-text" th:text="|${blog.description}|......">
                                     在你决定踏上财富自由的路之前，你要先想清楚，这件事真正的意义是什么；如果你真的“想要”财富自由，那么你就需要理解“财富自由”，直到你把这个概念理解得像吃饭睡觉一样透彻之后，你才有了可以加速向它靠近的前提。</p>
                                 <div class="ui grid">
@@ -270,7 +270,7 @@
                                 </div>
                             </div>
                             <div class="five wide column">
-                                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                                <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank">
                                     <img src="https://picsum.photos/id/1003/800/450" th:src="${blog.firstPicture}" alt=""
                                          class="ui rounded image">
                                 </a>
@@ -280,7 +280,7 @@
                     <div class="ui padded vertical segment m-padded-tb-large">
                         <div class="ui middle aligned mobile reversed stackable grid" th:each="blog : ${page.content}">
                             <div class="eleven wide column">
-                                <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
+                                <h3 class="ui header"><a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
                                 <p class="m-text" th:text="|${blog.description}|......">
                                     在你决定踏上财富自由的路之前，你要先想清楚，这件事真正的意义是什么；如果你真的“想要”财富自由，那么你就需要理解“财富自由”，直到你把这个概念理解得像吃饭睡觉一样透彻之后，你才有了可以加速向它靠近的前提。</p>
                                 <div class="ui grid">
@@ -307,7 +307,7 @@
                                 </div>
                             </div>
                             <div class="five wide column">
-                                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                                <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank">
                                     <img src="https://picsum.photos/id/1003/800/450" th:src="${blog.firstPicture}" alt=""
                                          class="ui rounded image">
                                 </a>
@@ -317,7 +317,7 @@
                     <div class="ui padded vertical segment m-padded-tb-large">
                         <div class="ui middle aligned mobile reversed stackable grid" th:each="blog : ${page.content}">
                             <div class="eleven wide column">
-                                <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
+                                <h3 class="ui header"><a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
                                 <p class="m-text" th:text="|${blog.description}|......">
                                     在你决定踏上财富自由的路之前，你要先想清楚，这件事真正的意义是什么；如果你真的“想要”财富自由，那么你就需要理解“财富自由”，直到你把这个概念理解得像吃饭睡觉一样透彻之后，你才有了可以加速向它靠近的前提。</p>
                                 <div class="ui grid">
@@ -344,7 +344,7 @@
                                 </div>
                             </div>
                             <div class="five wide column">
-                                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                                <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank">
                                     <img src="https://picsum.photos/id/1003/800/450" th:src="${blog.firstPicture}" alt=""
                                          class="ui rounded image">
                                 </a>
@@ -354,7 +354,7 @@
                     <div class="ui padded vertical segment m-padded-tb-large">
                         <div class="ui middle aligned mobile reversed stackable grid" th:each="blog : ${page.content}">
                             <div class="eleven wide column">
-                                <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
+                                <h3 class="ui header"><a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
                                 <p class="m-text" th:text="|${blog.description}|......">
                                     在你决定踏上财富自由的路之前，你要先想清楚，这件事真正的意义是什么；如果你真的“想要”财富自由，那么你就需要理解“财富自由”，直到你把这个概念理解得像吃饭睡觉一样透彻之后，你才有了可以加速向它靠近的前提。</p>
                                 <div class="ui grid">
@@ -381,7 +381,7 @@
                                 </div>
                             </div>
                             <div class="five wide column">
-                                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                                <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank">
                                     <img src="https://picsum.photos/id/1003/800/450" th:src="${blog.firstPicture}" alt=""
                                          class="ui rounded image">
                                 </a>
@@ -391,7 +391,7 @@
                     <div class="ui padded vertical segment m-padded-tb-large">
                         <div class="ui middle aligned mobile reversed stackable grid" th:each="blog : ${page.content}">
                             <div class="eleven wide column">
-                                <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
+                                <h3 class="ui header"><a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗？</a></h3>
                                 <p class="m-text" th:text="|${blog.description}|......">
                                     在你决定踏上财富自由的路之前，你要先想清楚，这件事真正的意义是什么；如果你真的“想要”财富自由，那么你就需要理解“财富自由”，直到你把这个概念理解得像吃饭睡觉一样透彻之后，你才有了可以加速向它靠近的前提。</p>
                                 <div class="ui grid">
@@ -418,7 +418,7 @@
                                 </div>
                             </div>
                             <div class="five wide column">
-                                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                                <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank">
                                     <img src="https://picsum.photos/id/1003/800/450" th:src="${blog.firstPicture}" alt=""
                                          class="ui rounded image">
                                 </a>
@@ -551,29 +551,29 @@
                         <i class="bookmark icon"></i>最新推荐
                     </div>
                     <div class="ui segment" th:each="blog : ${recommendBlogs}">
-                        <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" th:text="${blog.title}" class="m-black m-text-thin">用户故事（User Story）</a>
+                        <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" th:text="${blog.title}" class="m-black m-text-thin">用户故事（User Story）</a>
                     </div>
                     <!--/*-->
                     <div class="ui segment" th:each="blog : ${recommendBlogs}">
-                        <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" th:text="${blog.title}" class="m-black m-text-thin">用户故事（User Story）</a>
+                        <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" th:text="${blog.title}" class="m-black m-text-thin">用户故事（User Story）</a>
                     </div>
                     <div class="ui segment" th:each="blog : ${recommendBlogs}">
-                        <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" th:text="${blog.title}" class="m-black m-text-thin">用户故事（User Story）</a>
+                        <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" th:text="${blog.title}" class="m-black m-text-thin">用户故事（User Story）</a>
                     </div>
                     <div class="ui segment" th:each="blog : ${recommendBlogs}">
-                        <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" th:text="${blog.title}" class="m-black m-text-thin">用户故事（User Story）</a>
+                        <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" th:text="${blog.title}" class="m-black m-text-thin">用户故事（User Story）</a>
                     </div>
                     <div class="ui segment" th:each="blog : ${recommendBlogs}">
-                        <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" th:text="${blog.title}" class="m-black m-text-thin">用户故事（User Story）</a>
+                        <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" th:text="${blog.title}" class="m-black m-text-thin">用户故事（User Story）</a>
                     </div>
                     <div class="ui segment" th:each="blog : ${recommendBlogs}">
-                        <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" th:text="${blog.title}" class="m-black m-text-thin">用户故事（User Story）</a>
+                        <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" th:text="${blog.title}" class="m-black m-text-thin">用户故事（User Story）</a>
                     </div>
                     <div class="ui segment" th:each="blog : ${recommendBlogs}">
-                        <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" th:text="${blog.title}" class="m-black m-text-thin">用户故事（User Story）</a>
+                        <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" th:text="${blog.title}" class="m-black m-text-thin">用户故事（User Story）</a>
                     </div>
                     <div class="ui segment" th:each="blog : ${recommendBlogs}">
-                        <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" th:text="${blog.title}" class="m-black m-text-thin">用户故事（User Story）</a>
+                        <a href="#" th:href="@{/blogs/{id}(id=${blog.id})}" target="_blank" th:text="${blog.title}" class="m-black m-text-thin">用户故事（User Story）</a>
                     </div>
                     <!--*/-->
                 </div>
