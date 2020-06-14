@@ -104,7 +104,7 @@
                     <td th:text="${blog.type.name}">所在分类</td>
                     <td th:text="${blog.recommend} ? '是':'否'">是</td>
                     <td th:text="${blog.published} ? '发布':'草稿'">发布</td>
-                    <td th:text="${blog.updateTime}">2020-06-01 12:54</td>
+                    <td th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd HH:mm')}">2020-06-01 12:54</td>
                     <td>
                         <a href="#" th:href="@{/admin/blogs/{id}/input(id=${blog.id})}" class="ui mini teal basic button">编辑</a>
                         <a href="#" th:href="@{/admin/blogs/{id}/delete(id=${blog.id})}" class="ui mini red basic button">删除</a>
