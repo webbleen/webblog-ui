@@ -468,30 +468,32 @@ h5,h6{font-size:1em;}
                 </div>
             </div>
             <!--赞赏-->
-            <div class="ui center aligned basic segment">
-                <button id="payButton" class="ui orange basic circular button" th:unless="${blog.appreciation}">赞赏
-                </button>
-            </div>
-            <div class="ui payQR flowing popup transition hidden">
-                <div class="ui orange basic label">
-                    <div class="ui images" style="font-size: inherit !important;">
-                        <div class="image">
-                            <img src="../static/images/wechat.png" th:src="@{/images/wechat.png}" alt=""
-                                 class="ui rounded bordered image"
-                                 style="width: 120px">
-                            <div>支付宝</div>
-                        </div>
-                        <div class="image">
-                            <img src="../static/images/wechat.png" th:src="@{/images/wechat.png}" alt=""
-                                 class="ui rounded bordered image"
-                                 style="width: 120px">
-                            <div>微信</div>
+            <div th:if="${blog.appreciation}">
+                <div class="ui center aligned basic segment">
+                    <button id="payButton" class="ui orange basic circular button">赞赏
+                    </button>
+                </div>
+                <div class="ui payQR flowing popup transition hidden">
+                    <div class="ui orange basic label">
+                        <div class="ui images" style="font-size: inherit !important;">
+                            <div class="image">
+                                <img src="../static/images/wechat.png" th:src="@{/images/wechat.png}" alt=""
+                                     class="ui rounded bordered image"
+                                     style="width: 120px">
+                                <div>支付宝</div>
+                            </div>
+                            <div class="image">
+                                <img src="../static/images/wechat.png" th:src="@{/images/wechat.png}" alt=""
+                                     class="ui rounded bordered image"
+                                     style="width: 120px">
+                                <div>微信</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="ui attached positive message">
+        <div class="ui attached positive message" th:if="${blog.shareStatement}">
             <!--博客信息-->
             <div class="ui middle aligned grid">
                 <div class="eleven wide column">
@@ -512,7 +514,7 @@ h5,h6{font-size:1em;}
                 </div>
             </div>
         </div>
-        <div class="ui bottom attached segment">
+        <div class="ui bottom attached segment" th:if="${blog.commentable}">
             <!--留言区域列表-->
             <div id="comment-container" class="ui teal segment">
                 <div th:fragment="commentList">
@@ -759,7 +761,7 @@ h5,h6{font-size:1em;}
         position: 'left center'
     });
 
-    var serverUrl = "http://192.168.0.3:8088";
+    var serverUrl = /*[[#{site.baseurl}]]*/"192.168.0.3:8088";
     var blogPath = /*[[@{/blogs/{id}(id=${blog.id})}]]*/"";
     var qrcode = new QRCode("qrcode", {
         text: window.location.href,
